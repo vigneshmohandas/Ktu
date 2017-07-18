@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.vignesh.ktu">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Main2Activity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".semester1"
+            android:label="Semester1" />
+        <activity
+            android:name=".semester2"
+            android:label="Semester2" />
+        <activity
+            android:name=".semester3"
+            android:label="Semester3" />
+        <activity
+            android:name=".semester4"
+            android:label="Semester4" />
+        <activity
+            android:name=".semester5"
+            android:label="Semester5" />
+        <activity
+            android:name=".semester6"
+            android:label="Semester6" />
+        <activity
+            android:name=".semester7"
+            android:label="Semester7" />
+        <activity
+            android:name=".semester8"
+            android:label="Semester8" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".branch" />
+        <activity android:name=".mtechbranch"></activity>
+    </application>
+
+</manifest>

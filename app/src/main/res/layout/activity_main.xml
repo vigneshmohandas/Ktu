@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/tools">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/profile7background"
+        android:focusableInTouchMode="true"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Michael Hendley"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:gravity="center_vertical"
+            android:text="Manhattan, NY"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="74dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="64dp"
+        android:src="@drawable/profiile_pic" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Michael Angelo"
+        android:textSize="24sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:gravity="center_vertical"
+        android:text="Manhattan, NY"
+        android:textSize="12sp" />
+
+    <LinearLayout
+        android:id="@+id/menuContainer"
+        android:layout_width="match_parent"
+        android:layout_height="280dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/button1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onClick"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center_horizontal"
+                app:cardBackgroundColor="@color/menuNavigation1Button4Bg"
+                app:cardCornerRadius="24dp">
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                    android:background="@color/menuNavigation1Button1Bg"
+                    android:src="@drawable/ic_filter_1_black_24dp" />
+
+            </android.support.v7.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:text="Semester1"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onClick"
+            android:orientation="vertical"
+            >
+
+            <android.support.v7.widget.CardView
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center_horizontal"
+                app:cardBackgroundColor="@color/menuNavigation1Button1Bg"
+                >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/menuNavigation1Button2Bg"
+                    android:src="@drawable/ic_filter_2_black_24dp"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                     />
+
+            </android.support.v7.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:text="Semester2"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/button3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onClick"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center_horizontal"
+                app:cardBackgroundColor="@color/menuNavigation1Button2Bg"
+                app:cardCornerRadius="24dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/menuNavigation1Button3Bg"
+                    android:src="@drawable/ic_filter_3_black_24dp"
+                    android:layout_gravity="center_horizontal|center_vertical" />
+
+            </android.support.v7.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:text="Semester3"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/button4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onClick"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center_horizontal"
+                app:cardBackgroundColor="@color/menuNavigation1Button3Bg"
+                app:cardCornerRadius="24dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_filter_4"
+                    android:background="@color/menuNavigation1Button4Bg"
+                    android:layout_gravity="center_horizontal|center_vertical"
+                     />
+
+            </android.support.v7.widget.CardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:text="Semester4"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <LinearLayout
+                android:id="@+id/button5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onClick"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center_horizontal"
+                    app:cardBackgroundColor="@color/menuNavigation1Button4Bg"
+                    app:cardCornerRadius="24dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_filter_5_black_24dp"
+                        android:background="@color/menuNavigation1Button5Bg"
+                        android:layout_gravity="center_horizontal|center_vertical" />
+
+                </android.support.v7.widget.CardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dp"
+                    android:text="Semester5"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/button6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onClick"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center_horizontal"
+                    app:cardBackgroundColor="@color/menuNavigation1Button4Bg"
+                    app:cardCornerRadius="24dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_filter_6"
+                        android:background="@color/menuNavigation1Button6Bg"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                         />
+
+                </android.support.v7.widget.CardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dp"
+                    android:text="Semester6"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/button7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onClick"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center_horizontal"
+                    app:cardBackgroundColor="@color/menuNavigation1Button5Bg"
+                    app:cardCornerRadius="24dp">
+
+                    <ImageView
+                        android:id="@+id/imageView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#40579b"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:src="@drawable/ic_filter_7" />
+
+                </android.support.v7.widget.CardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dp"
+                    android:text="Semester7"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/button8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onClick"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center_horizontal"
+                    app:cardBackgroundColor="@color/menuNavigation1Button6Bg"
+                    app:cardCornerRadius="24dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#84ff02"
+                        android:layout_gravity="center_horizontal|center_vertical"
+                        android:src="@drawable/ic_filter_8"
+                        />
+
+                </android.support.v7.widget.CardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="8dp"
+                    android:text="Semester8"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    </LinearLayout>
+
+
+    </ScrollView>
