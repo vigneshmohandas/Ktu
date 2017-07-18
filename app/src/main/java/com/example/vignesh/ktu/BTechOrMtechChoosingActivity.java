@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-public class Main2Activity extends AppCompatActivity {
+public class BTechOrMtechChoosingActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,7 +15,7 @@ public class Main2Activity extends AppCompatActivity {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.button1:
-                Intent i1 = new Intent(this, branch.class);
+                Intent i1 = new Intent(this, BranchChoosingActivity.class);
                 startActivity(i1);
                 break;
             case R.id.button2:

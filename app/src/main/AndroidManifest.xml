@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Main2Activity">
+        <activity android:name=".BTechOrMtechChoosingActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -40,8 +40,8 @@
         <activity
             android:name=".semester8"
             android:label="Semester8" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".branch" />
+        <activity android:name=".SemesterChoosingActivity" />
+        <activity android:name=".BranchChoosingActivity" />
         <activity android:name=".mtechbranch"></activity>
     </application>
 
