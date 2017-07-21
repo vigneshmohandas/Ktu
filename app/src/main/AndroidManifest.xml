@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.vignesh.ktu">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -42,7 +44,7 @@
             android:label="Semester8" />
         <activity android:name=".SemesterChoosingActivity" />
         <activity android:name=".BranchChoosingActivity" />
-        <activity android:name=".mtechbranch"></activity>
+        <activity android:name=".mtechbranch" />
     </application>
 
 </manifest>
