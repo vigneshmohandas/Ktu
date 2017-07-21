@@ -77,6 +77,5 @@ public class BranchChoosingActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
-
     }
 }
