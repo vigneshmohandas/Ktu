@@ -45,6 +45,7 @@
         <activity android:name=".SemesterChoosingActivity" />
         <activity android:name=".BranchChoosingActivity" />
         <activity android:name=".mtechbranch" />
+        <activity android:name=".modulelist"></activity>
     </application>
 
 </manifest>

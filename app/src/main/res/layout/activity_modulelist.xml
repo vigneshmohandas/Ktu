@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical"
+        android:paddingBottom="8dp">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:padding="14dp"
+                android:text="MATHS" />
+
+        </android.support.v7.widget.CardView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imgProfile1"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_margin="8dp"
+                android:src="@drawable/profiile_pic" />
+
+            <TextView
+                android:id="@+id/textDescription1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="21dp"
+                android:layout_toEndOf="@+id/imgProfile1"
+                android:layout_toRightOf="@+id/imgProfile1"
+                android:text="MODULE 1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/activity5fontGray"
+                android:textSize="15sp"
+                android:layout_marginTop="50dp"
+                android:text="Course Objectives
+This course introduces basic ideas of differential equations, both ordinary and partial, which are widely used in the modeling and analysis of a wide range of physical phenomena and has got applications across all branches of engineering.  The course also introduces Fourier series which is used by engineers to represent and analyze periodic functions in terms of their frequency components.
+Syllabus
+Homogeneous linear ordinary differential equations, non-homogeneous linear ordinary differential equations, numerical solutions of ordinary differential equations, Fourier series, partial differential equations, applications of partial differential equations.
+Expected outcome
+At the end of the course students will have acquired basic knowledge of differential equations and methods of solving them and their use in analyzing typical mechanical or electrical systems. The included set of assignments will familiarize the students with the use of software packages for analyzing systems modeled by differential equations."/>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/activity5SplitterGray" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imgProfile2"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_margin="8dp"
+                android:src="@drawable/profiile_pic" />
+
+            <TextView
+                android:id="@+id/textDescription2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="21dp"
+                android:layout_toEndOf="@+id/imgProfile2"
+                android:layout_toRightOf="@+id/imgProfile2"
+                android:text="MODULE 2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/activity5fontGray"
+                android:textSize="15sp"
+                android:layout_marginTop="50dp"
+                android:text="Course Objectives
+This course introduces basic ideas of differential equations, both ordinary and partial, which are widely used in the modeling and analysis of a wide range of physical phenomena and has got applications across all branches of engineering.  The course also introduces Fourier series which is used by engineers to represent and analyze periodic functions in terms of their frequency components.
+Syllabus
+Homogeneous linear ordinary differential equations, non-homogeneous linear ordinary differential equations, numerical solutions of ordinary differential equations, Fourier series, partial differential equations, applications of partial differential equations.
+Expected outcome
+At the end of the course students will have acquired basic knowledge of differential equations and methods of solving them and their use in analyzing typical mechanical or electrical systems. The included set of assignments will familiarize the students with the use of software packages for analyzing systems modeled by differential equations."/>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/activity5SplitterGray" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imgProfile3"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_margin="8dp"
+                android:src="@drawable/profiile_pic" />
+
+            <TextView
+                android:id="@+id/textDescription3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="21dp"
+                android:layout_toEndOf="@+id/imgProfile3"
+                android:layout_toRightOf="@+id/imgProfile3"
+                android:text="MODULE 3" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/activity5fontGray"
+                android:textSize="15sp"
+                android:layout_marginTop="50dp"
+                android:text="Course Objectives
+This course introduces basic ideas of differential equations, both ordinary and partial, which are widely used in the modeling and analysis of a wide range of physical phenomena and has got applications across all branches of engineering.  The course also introduces Fourier series which is used by engineers to represent and analyze periodic functions in terms of their frequency components.
+Syllabus
+Homogeneous linear ordinary differential equations, non-homogeneous linear ordinary differential equations, numerical solutions of ordinary differential equations, Fourier series, partial differential equations, applications of partial differential equations.
+Expected outcome
+At the end of the course students will have acquired basic knowledge of differential equations and methods of solving them and their use in analyzing typical mechanical or electrical systems. The included set of assignments will familiarize the students with the use of software packages for analyzing systems modeled by differential equations."/>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/activity5SplitterGray" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imgProfile4"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_margin="8dp"
+                android:src="@drawable/profiile_pic" />
+
+            <TextView
+                android:id="@+id/textDescription4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="21dp"
+                android:layout_toEndOf="@+id/imgProfile4"
+                android:layout_toRightOf="@+id/imgProfile4"
+                android:text="MODULE 4" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/activity5fontGray"
+                android:textSize="15sp"
+                android:layout_marginTop="50dp"
+                android:text="Course Objectives
+This course introduces basic ideas of differential equations, both ordinary and partial, which are widely used in the modeling and analysis of a wide range of physical phenomena and has got applications across all branches of engineering.  The course also introduces Fourier series which is used by engineers to represent and analyze periodic functions in terms of their frequency components.
+Syllabus
+Homogeneous linear ordinary differential equations, non-homogeneous linear ordinary differential equations, numerical solutions of ordinary differential equations, Fourier series, partial differential equations, applications of partial differential equations.
+Expected outcome
+At the end of the course students will have acquired basic knowledge of differential equations and methods of solving them and their use in analyzing typical mechanical or electrical systems. The included set of assignments will familiarize the students with the use of software packages for analyzing systems modeled by differential equations."/>
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/activity5SplitterGray" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imgProfile5"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:layout_margin="8dp"
+                android:src="@drawable/profiile_pic" />
+
+            <TextView
+                android:id="@+id/textDescription5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="21dp"
+                android:layout_toEndOf="@+id/imgProfile5"
+                android:layout_toRightOf="@+id/imgProfile5"
+                android:text="REFERENCES" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/activity5fontGray"
+                android:textSize="15sp"
+                android:layout_marginTop="50dp"
+                android:text="Text Books:
+•      Kreyszig, E., Advanced Engineering Mathematics, Wiley
+•      Srivastava, A. C. and Srivasthava, P. K., Engineering Mathematics, Vol 2. PHI Learning Pvt.
+Ltd.
+References Books:
+•      Bali, N. P. and Goyal, M., Engineering Mathematics, Lakshmy Publications
+•      Datta, Mathematical Methods for Science and Engineering. Cengage Learning
+•      Edwards, C. H. and Penney, D. E., Differential Equations and Boundary Value Problems.
+Computing and Modelling, Pearson.
+•      Grewal, B. S., Higher Engineering Mathematics, Khanna Publishers, New Delhi.
+•      Jordan, D. W. and Smith, P., Mathematical Techniques, Oxford University Press
+•      Pal, S and Bhunia, S. C., Engineering Mathematics, Oxford, 2015
+•      Ross, S. L., Differential Equations, Wiley" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/activity5SplitterGray" />
+
+    </LinearLayout>
+
+</ScrollView>

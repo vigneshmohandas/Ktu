@@ -24,9 +24,9 @@ import static com.example.vignesh.ktu.R.id.parent;
 
 public class BranchChoosingActivity extends AppCompatActivity {
     ArrayList<Branch> branchArrayList;
-    HashMap<String,Branch> branchHashMap;
     ArrayList<String> branchdisplay;
     ArrayAdapter<String> branchadapter;
+    Branch choosedBranch;
 
     DatabaseReference databaseReference;
 
@@ -39,7 +39,7 @@ public class BranchChoosingActivity extends AppCompatActivity {
         databaseReference = CusUtils.getDatabase().getReference().child("btech");
         databaseReference.keepSynced(true);
         branchArrayList = new ArrayList<>();
-        branchHashMap = new HashMap<>();
+
         Log.e("WHERE", "BRANCH CHOOSER");
 
         Log.e("DB_REF", (databaseReference == null) + "");
@@ -53,10 +53,11 @@ public class BranchChoosingActivity extends AppCompatActivity {
                 Log.e("CHILDRED", dataSnapshot.getChildrenCount() + "");
                 for (DataSnapshot branch : dataSnapshotIterable) {
                     Branch branch1 = branch.getValue(Branch.class);
+                    branchArrayList.add(branch1);
 
 
                     branch1.printBranchDetails();
-                    branchHashMap.put(branch1.branch_name, branch1);
+
                     branchdisplay.add(branch1.branch_name);
 
                 }
@@ -73,8 +74,13 @@ public class BranchChoosingActivity extends AppCompatActivity {
         branchListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent i= new Intent(BranchChoosingActivity.this,SemesterChoosingActivity.class);
+                choosedBranch = branchArrayList.get(position);
+                Intent i = new Intent(BranchChoosingActivity.this,SemesterChoosingActivity.class);
+                i.putExtra("branch_name",choosedBranch.branch_name);
+                i.putExtra("branch_code",choosedBranch.branch_code);
+                i.putExtra("branch_semester",choosedBranch.branch_semesters+"");
                 startActivity(i);
+
             }
         });
     }
