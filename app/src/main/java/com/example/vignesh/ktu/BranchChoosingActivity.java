@@ -36,7 +36,7 @@ public class BranchChoosingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_branch);
         branchListView = (ListView) findViewById(R.id.branchListView);
-        databaseReference = CusUtils.getDatabase().getReference().child("btech");
+        databaseReference = CusUtils.getDatabase().getReference().child("btech").child("courses");
         databaseReference.keepSynced(true);
         branchArrayList = new ArrayList<>();
 

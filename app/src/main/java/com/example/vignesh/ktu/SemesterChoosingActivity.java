@@ -7,17 +7,16 @@ import android.support.v7.widget.CardView;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.GridView;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class SemesterChoosingActivity extends AppCompatActivity implements View.OnClickListener{
+public class SemesterChoosingActivity extends AppCompatActivity{
     String branch_name;
     String branch_code;
     String branch_semester;
@@ -60,65 +59,28 @@ public class SemesterChoosingActivity extends AppCompatActivity implements View.
         layoutParamsCardView.gravity = Gravity.CENTER_HORIZONTAL|Gravity.CENTER_VERTICAL ;
         sems = new ArrayList<>();
         for(int j = 0;j<branch_name_i;j++){
-            sems.add(j+"");
+            sems.add(j+1+"");
         }
-        arrayAdapter = new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_expandable_list_item_1,sems);
+        arrayAdapter = new ArrayAdapter<String>(getApplicationContext(),R.layout.semester_grid_layout,sems);
         gv.setAdapter(arrayAdapter);
-        for (int k =0;k<branch_name_i;k++){
-//            inner_image = new TextView(getApplicationContext());
-//            cardView = new CardView(getApplicationContext());
-//
-//            inner_image.setLayoutParams(layoutParamsImageView);
-//            inner_image.setText(k+1+"");
-//
-//            cardView.setLayoutParams(layoutParamsCardView);
-//            cardView.addView(inner_image);
-//            testlayout.addView(cardView);
+
+        gv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                String branch_and_semster = branch_code+(position+1)+"";
+                Toast.makeText(SemesterChoosingActivity.this, branch_and_semster, Toast.LENGTH_SHORT).show();
+
+                Intent i = new Intent(SemesterChoosingActivity.this,Semester.class);
+
+                i.putExtra("branch_and_semster",branch_and_semster.toLowerCase());
+                startActivity(i);
+            }
+        });
 
 
-        }
     }
 
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()){
-            case R.id.button1:
-                Intent i1=new Intent(this,semester1.class);
-                startActivity(i1);
-                break;
-            case R.id.button2:
-                Intent i2=new Intent(this,semester2.class);
-                startActivity(i2);
-                break;
-//            case R.id.button3:
-//                Intent i3=new Intent(this,semester3.class);
-//                startActivity(i3);
-//                break;
-//            case R.id.button4:
-//                Intent i4=new Intent(this,semester4.class);
-//                startActivity(i4);
-//                break;
-//            case R.id.button5:
-//                Intent i5=new Intent(this,semester5.class);
-//                startActivity(i5);
-//                break;
-//            case R.id.button6:
-//                Intent i6=new Intent(this,semester6.class);
-//                startActivity(i6);
-//                break;
-//            case R.id.button7:
-//                Intent i7=new Intent(this,semester7.class);
-//                startActivity(i7);
-//                break;
-//            case R.id.button8:
-//                Intent i8=new Intent(this,semester8.class);
-//                startActivity(i8);
-//                break;
-            default:
-                break;
-        }
-
-        }
     }
 
 

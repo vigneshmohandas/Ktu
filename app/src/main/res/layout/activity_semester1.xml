@@ -4,12 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.vignesh.ktu.semester1">
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="MATHS"
-    android:textSize="30sp"
-    android:paddingLeft="20dp"
-    android:onClick="onclick"/>
+    tools:context="com.example.vignesh.ktu.Semester">
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/subjectList"></ListView>
 </LinearLayout>

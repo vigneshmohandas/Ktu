@@ -10,6 +10,7 @@
     <ListView
         android:layout_width="match_parent"
         android:id="@+id/branchListView"
+        android:focusable="false"
         android:layout_height="wrap_content"
 
         ></ListView>

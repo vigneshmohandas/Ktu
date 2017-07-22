@@ -19,33 +19,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".semester1"
+            android:name=".Semester"
             android:label="Semester1" />
-        <activity
-            android:name=".semester2"
-            android:label="Semester2" />
-        <activity
-            android:name=".semester3"
-            android:label="Semester3" />
-        <activity
-            android:name=".semester4"
-            android:label="Semester4" />
-        <activity
-            android:name=".semester5"
-            android:label="Semester5" />
-        <activity
-            android:name=".semester6"
-            android:label="Semester6" />
-        <activity
-            android:name=".semester7"
-            android:label="Semester7" />
-        <activity
-            android:name=".semester8"
-            android:label="Semester8" />
+
         <activity android:name=".SemesterChoosingActivity" />
         <activity android:name=".BranchChoosingActivity" />
         <activity android:name=".mtechbranch" />
-        <activity android:name=".modulelist"></activity>
+        <activity android:name=".ModuleList"></activity>
     </application>
 
 </manifest>
