@@ -49,13 +49,7 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
-        DisplayMetrics displaymetrics = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
-        vtlo = (ImageView)findViewById(R.id.vtlo);
-        int screenWidth = displaymetrics.widthPixels;
-        int screenHeight = displaymetrics.heightPixels;
-        vtlo.setMaxHeight(screenWidth);
-        vtlo.setMinimumHeight(screenWidth);
+
 
 //        LOGIN SECTION
         mAuth = FirebaseAuth.getInstance();
