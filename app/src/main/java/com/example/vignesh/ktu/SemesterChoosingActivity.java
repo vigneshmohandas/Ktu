@@ -10,9 +10,13 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -36,6 +40,9 @@ public class SemesterChoosingActivity extends AppCompatActivity{
 
     ArrayList<String> sems;
     ArrayAdapter<String> arrayAdapter;
+    ImageView imageView;
+
+    FirebaseAuth auth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +56,12 @@ public class SemesterChoosingActivity extends AppCompatActivity{
         branch_name_i=Integer.parseInt(branch_semester);
 //        testlayout = (LinearLayout)findViewById(R.id.testlayout);
         gv = (GridView)findViewById(R.id.gv);
+        imageView = (ImageView)findViewById(R.id.imageView);
+
+
+        auth = FirebaseAuth.getInstance();
+
+        Picasso.with(getApplicationContext()).load(auth.getCurrentUser().getPhotoUrl()).into(imageView);
 
 
         LinearLayout.LayoutParams layoutParamsImageView = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
