@@ -47,7 +47,7 @@ public class Semester extends AppCompatActivity {
                     arrayListSubjects.add(individial_sub);
                     subjectstoBeDisplayed.add(individial_sub.getSubject_name());
 
-                    Toast.makeText(Semester.this, individial_sub.getSubject_name(), Toast.LENGTH_SHORT).show();
+                   // Toast.makeText(Semester.this, individial_sub.getSubject_name(), Toast.LENGTH_SHORT).show();
 
                 }
                 subjectsAdapter = new ArrayAdapter<String>(getApplicationContext(),R.layout.list_layout,subjectstoBeDisplayed);

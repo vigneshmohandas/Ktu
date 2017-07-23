@@ -20,13 +20,15 @@
         </activity>
         <activity
             android:name=".Semester"
-            android:label="Semester1" />
+            android:label="Choose Subject" />
 
         <activity android:name=".SemesterChoosingActivity" />
-        <activity android:name=".BranchChoosingActivity" />
+        <activity android:name=".BranchChoosingActivity"
+            android:label="Choose Branch"/>
         <activity android:name=".mtechbranch" />
         <activity android:name=".ModuleList"></activity>
-        <activity android:name=".BTechOrMtechChoosingActivity"></activity>
+        <activity android:name=".BTechOrMtechChoosingActivity"
+            android:label="Choose Course"></activity>
     </application>
 
 </manifest>

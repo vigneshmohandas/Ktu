@@ -12,7 +12,7 @@
         android:id="@+id/branchListView"
         android:focusable="false"
         android:layout_height="wrap_content"
-
+        android:layout_marginLeft="5dp"
         ></ListView>
 
 </LinearLayout>

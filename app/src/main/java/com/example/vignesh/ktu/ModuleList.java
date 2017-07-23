@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.vignesh.ktu.extra.CusUtils;
 import com.example.vignesh.ktu.models.IndividualModule;
@@ -23,6 +24,7 @@ public class ModuleList extends AppCompatActivity {
     ArrayList<IndividualModule> individualModuleArrayList;
     ModuleCardAdapter moduleCardAdapter;
     ListView listView;
+    TextView tv1,tv2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +34,8 @@ public class ModuleList extends AppCompatActivity {
         String subject_name = i.getStringExtra("subject_name");
         String subject_code = i.getStringExtra("subject_code");
         listView = (ListView)findViewById(R.id.listView);
-
+        tv1= (TextView)findViewById(R.id.subject_name);
+        tv1.setText(subject_name);
         databaseReferenceModules = CusUtils.getDatabase().getReference().child("btech").child("syllbus").child(subject_code).child("modules");
         databaseReferenceReference = CusUtils.getDatabase().getReference().child("btech").child("syllbus").child(subject_code).child("reference");
 

@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Target;
 
 import java.util.ArrayList;
 
@@ -41,7 +42,7 @@ public class SemesterChoosingActivity extends AppCompatActivity{
     ArrayList<String> sems;
     ArrayAdapter<String> arrayAdapter;
     ImageView imageView;
-
+    TextView textview;
     FirebaseAuth auth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,12 +58,13 @@ public class SemesterChoosingActivity extends AppCompatActivity{
 //        testlayout = (LinearLayout)findViewById(R.id.testlayout);
         gv = (GridView)findViewById(R.id.gv);
         imageView = (ImageView)findViewById(R.id.imageView);
-
+        textview =(TextView)findViewById(R.id.name);
 
         auth = FirebaseAuth.getInstance();
 
         Picasso.with(getApplicationContext()).load(auth.getCurrentUser().getPhotoUrl()).into(imageView);
-
+        String name = auth.getCurrentUser().getDisplayName();
+        textview.setText(name);
 
         LinearLayout.LayoutParams layoutParamsImageView = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         LinearLayout.LayoutParams layoutParamsCardView = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -70,6 +72,7 @@ public class SemesterChoosingActivity extends AppCompatActivity{
         layoutParamsCardView.height = (int)getResources().getDimension(R.dimen.square_card_w_h);
         layoutParamsCardView.width = (int)getResources().getDimension(R.dimen.square_card_w_h);
         layoutParamsCardView.gravity = Gravity.CENTER_HORIZONTAL|Gravity.CENTER_VERTICAL ;
+
         sems = new ArrayList<>();
         for(int j = 0;j<branch_name_i;j++){
             sems.add(j+1+"");
