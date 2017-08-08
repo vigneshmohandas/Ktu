@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -48,7 +49,6 @@ public class ModuleList extends AppCompatActivity {
                 for(DataSnapshot dataSnapshot1:dataSnapshotIterable){
                     IndividualModule individualModule =  dataSnapshot1.getValue(IndividualModule.class);
                     individualModuleArrayList.add(individualModule);
-
                     Log.e("TAG",individualModule.description);
                 }
                 moduleCardAdapter = new ModuleCardAdapter(ModuleList.this,R.layout.individual_module,individualModuleArrayList);
