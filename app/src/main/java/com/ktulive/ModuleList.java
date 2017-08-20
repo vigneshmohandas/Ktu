@@ -1,4 +1,4 @@
-package com.machinser.education.ktulive;
+package com.ktulive;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,9 +7,9 @@ import android.util.Log;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import com.machinser.education.ktulive.extra.CusUtils;
-import com.machinser.education.ktulive.models.IndividualModule;
-import com.machinser.education.ktulive.models.ModuleCardAdapter;
+import com.ktulive.extra.CusUtils;
+import com.ktulive.models.IndividualModule;
+import com.ktulive.models.ModuleCardAdapter;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;

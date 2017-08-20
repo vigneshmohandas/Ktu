@@ -1,4 +1,4 @@
-package com.machinser.education.ktulive;
+package com.ktulive;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

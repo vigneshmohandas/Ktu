@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context="com.machinser.education.ktulive.SplashScreen">
+    tools:context="com.ktulive.SplashScreen">
 
     <LinearLayout
         android:id="@+id/linearLayout"

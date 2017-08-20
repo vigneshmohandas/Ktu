@@ -1,4 +1,4 @@
-package com.machinser.education.ktulive.models;
+package com.ktulive.models;
 
 /**
  * Created by asnim on 18/07/17.

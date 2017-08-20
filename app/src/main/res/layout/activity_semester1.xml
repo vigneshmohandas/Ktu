@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.machinser.education.ktulive.Semester">
+    tools:context="com.ktulive.Semester">
     <ListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

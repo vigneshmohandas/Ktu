@@ -1,4 +1,4 @@
-package com.machinser.education.ktulive;
+package com.ktulive;
 
 import org.junit.Test;
 

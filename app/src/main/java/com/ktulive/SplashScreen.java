@@ -1,4 +1,4 @@
-package com.machinser.education.ktulive;
+package com.ktulive;
 
 import android.content.Context;
 import android.content.Intent;
@@ -168,7 +168,7 @@ public class SplashScreen extends AppCompatActivity {
                 public void run() {
                     // This method will be executed once the timer is over
                     // Start your app main activity
-                    Intent i = new Intent(SplashScreen.this, BTechOrMtechChoosingActivity.class);
+                    Intent i = new Intent(SplashScreen.this, BranchChoosingActivity.BTechOrMtechChoosingActivity.class);
                     startActivity(i);
 
                     // close this activity

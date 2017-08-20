@@ -1,4 +1,4 @@
-package com.machinser.education.ktulive;
+package com.ktulive;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

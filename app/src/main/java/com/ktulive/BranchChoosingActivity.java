@@ -1,4 +1,4 @@
-package com.machinser.education.ktulive;
+package com.ktulive;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -9,8 +9,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.machinser.education.ktulive.extra.CusUtils;
-import com.machinser.education.ktulive.models.Branch;
+import com.ktulive.extra.CusUtils;
+import com.ktulive.models.Branch;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -79,5 +79,28 @@ public class BranchChoosingActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    public static class BTechOrMtechChoosingActivity extends AppCompatActivity {
+
+        @Override
+        protected void onCreate(Bundle savedInstanceState) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_main2);
+        }
+        public void onClick(View view) {
+            switch (view.getId()) {
+                case R.id.button1:
+                    Intent i1 = new Intent(this, BranchChoosingActivity.class);
+                    startActivity(i1);
+                    break;
+                case R.id.button2:
+                    Intent i2 = new Intent(this, mtechbranch.class);
+                    startActivity(i2);
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }

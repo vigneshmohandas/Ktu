@@ -1,4 +1,4 @@
-package com.machinser.education.ktulive.models;
+package com.ktulive.models;
 
 import android.util.Log;
 

@@ -1,4 +1,4 @@
-package com.machinser.education.ktulive.models;
+package com.ktulive.models;
 
 import android.app.Activity;
 import android.content.Context;
@@ -11,7 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 
-import com.machinser.education.ktulive.R;
+import com.ktulive.R;
 
 import java.util.ArrayList;
 import java.util.Date;
