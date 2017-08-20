@@ -1,4 +1,4 @@
-package com.example.vignesh.ktu;
+package com.machinser.education.ktulive;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -9,18 +9,14 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.example.vignesh.ktu.extra.CusUtils;
-import com.example.vignesh.ktu.models.Branch;
-import com.example.vignesh.ktu.models.Semester;
+import com.machinser.education.ktulive.extra.CusUtils;
+import com.machinser.education.ktulive.models.Branch;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-
-import static com.example.vignesh.ktu.R.id.parent;
 
 public class BranchChoosingActivity extends AppCompatActivity {
     ArrayList<Branch> branchArrayList;

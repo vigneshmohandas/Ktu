@@ -1,4 +1,4 @@
-package com.example.vignesh.ktu;
+package com.machinser.education.ktulive;
 
 import org.junit.Test;
 

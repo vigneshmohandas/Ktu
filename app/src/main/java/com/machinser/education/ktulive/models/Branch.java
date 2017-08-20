@@ -1,4 +1,4 @@
-package com.example.vignesh.ktu.models;
+package com.machinser.education.ktulive.models;
 
 import android.util.Log;
 

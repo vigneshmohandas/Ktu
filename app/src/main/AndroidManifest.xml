@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.vignesh.ktu">
+    package="com.machinser.education.ktulive">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SplashScreen">
+        <activity android:name="com.machinser.education.ktulive.SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,15 +19,15 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Semester"
+            android:name="com.machinser.education.ktulive.Semester"
             android:label="Choose Subject" />
 
-        <activity android:name=".SemesterChoosingActivity" />
-        <activity android:name=".BranchChoosingActivity"
+        <activity android:name="com.machinser.education.ktulive.SemesterChoosingActivity" />
+        <activity android:name="com.machinser.education.ktulive.BranchChoosingActivity"
             android:label="Choose Branch"/>
-        <activity android:name=".mtechbranch" />
-        <activity android:name=".ModuleList"></activity>
-        <activity android:name=".BTechOrMtechChoosingActivity"
+        <activity android:name="com.machinser.education.ktulive.mtechbranch" />
+        <activity android:name="com.machinser.education.ktulive.ModuleList"></activity>
+        <activity android:name="com.machinser.education.ktulive.BTechOrMtechChoosingActivity"
             android:label="Choose Course"></activity>
     </application>
 

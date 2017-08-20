@@ -1,4 +1,4 @@
-package com.example.vignesh.ktu;
+package com.machinser.education.ktulive;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;

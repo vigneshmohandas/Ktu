@@ -1,4 +1,4 @@
-package com.example.vignesh.ktu;
+package com.machinser.education.ktulive;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,10 +7,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
-import com.example.vignesh.ktu.extra.CusUtils;
-import com.example.vignesh.ktu.models.Subjects;
+import com.machinser.education.ktulive.extra.CusUtils;
+import com.machinser.education.ktulive.models.Subjects;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
