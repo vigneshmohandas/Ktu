@@ -1,5 +1,7 @@
 package com.ktulive.extra;
 
+import android.support.v7.widget.RecyclerView;
+
 import com.google.firebase.database.FirebaseDatabase;
 
 /**
@@ -14,6 +16,8 @@ public class CusUtils {
         if (mDatabase == null) {
             mDatabase = FirebaseDatabase.getInstance();
             mDatabase.setPersistenceEnabled(true);
+
+
 
 //
         }
