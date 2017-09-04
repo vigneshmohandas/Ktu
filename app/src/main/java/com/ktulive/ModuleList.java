@@ -3,9 +3,7 @@ package com.ktulive;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -37,7 +35,7 @@ public class ModuleList extends AppCompatActivity {
         Intent i = getIntent();
         String subject_name = i.getStringExtra("subject_name");
         String subject_code = i.getStringExtra("subject_code");
-        listView = (ListView)findViewById(R.id.listView);
+        listView = (ListView)findViewById(R.id.lvv);
         tv1= (TextView)findViewById(R.id.subject_name);
         tv1.setText(subject_name);
         databaseReferenceModules = CusUtils.getDatabase().getReference().child("btech").child("syllbus").child(subject_code).child("modules");
