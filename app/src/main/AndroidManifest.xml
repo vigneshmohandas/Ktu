@@ -21,14 +21,14 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Semester"
+            android:name=".fragments.ModuleandReferenceDisplayFragment"
             android:label="Choose Subject" />
-        <activity android:name=".SemesterChoosingActivity" />
+        <activity android:name=".fragments.SemesterChoosingFragment" />
        \
         <activity android:name=".mtechbranch" />
-        <activity android:name=".ModuleList" />
+        <activity android:name=".fragments.SubjectChoosingFragment" />
 
-        <activity android:name=".HomeScreen"></activity>
+        <activity android:name=".actvities.HomeScreen"></activity>
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package com.ktulive.models;
+package com.ktulive.adapters;
 
 import android.app.Activity;
 import android.content.Context;
@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 
 import com.ktulive.R;
+import com.ktulive.models.IndividualModule;
 
 import java.util.ArrayList;
 import java.util.Date;

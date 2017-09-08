@@ -1,10 +1,8 @@
-package com.ktulive
+package com.ktulive.fragments
 
 
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.support.v4.app.Fragment
-import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -18,7 +16,7 @@ import com.ktulive.R
  * Created by asnimpansari on 8/20/17.
  */
 
-class BtechOrMtech : Fragment() {
+class CourseChoosingFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater!!.inflate(R.layout.btechormtech, container, false)
     }
@@ -37,7 +35,7 @@ class BtechOrMtech : Fragment() {
         Log.e("WHERE","BTECH CLICKED")
         Toast.makeText(activity.applicationContext,"BTECH",Toast.LENGTH_LONG)
 
-        var fragment = BranchChoosingActivity.Companion.newInstance() as Fragment
+        var fragment = BranchChoosingFragment.newInstance() as Fragment
 
         activity.supportFragmentManager.beginTransaction()
                 .replace(R.id.homeFrame,fragment)

@@ -1,10 +1,11 @@
-package com.ktulive
+package com.ktulive.actvities
 
 
 import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentTransaction
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.ktulive.R
+import com.ktulive.fragments.CourseChoosingFragment
 
 class HomeScreen : AppCompatActivity() {
 
@@ -19,7 +20,7 @@ class HomeScreen : AppCompatActivity() {
         var fragment: Fragment? = null
         when (itemID) {
             0// BTech or MTECH
-            -> fragment = BtechOrMtech()
+            -> fragment = CourseChoosingFragment()
             1// Branch CHoosing
             -> {
             }

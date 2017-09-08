@@ -2,11 +2,13 @@ package com.ktulive.models;
 
 import android.util.Log;
 
+import java.io.Serializable;
+
 /**
  * Created by asnim on 18/07/17.
  */
 
-public class Branch {
+public class Branch implements Serializable{
     public String getBranch_name() {
         return branch_name;
     }

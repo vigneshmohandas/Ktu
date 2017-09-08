@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.ktulive.HomeScreen">
+    tools:context="com.ktulive.actvities.HomeScreen">
 
     <FrameLayout
         android:layout_width="match_parent"
