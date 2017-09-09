@@ -29,10 +29,15 @@ class HomeScreen : AppCompatActivity() {
             val ft = supportFragmentManager.beginTransaction()
 
             ft.replace(R.id.homeFrame, fragment)
-            ft.commit()
+                    .addToBackStack("1xx")
+                    .commit()
 
 
         }
+    }
+
+    override fun onBackPressed() {
+
     }
 }
 

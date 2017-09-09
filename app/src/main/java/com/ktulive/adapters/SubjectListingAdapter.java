@@ -118,6 +118,7 @@ public class SubjectListingAdapter extends RecyclerView.Adapter<SubjectListingAd
 
             fragmentManager.beginTransaction()
                     .replace(R.id.homeFrame,fragment)
+                    .addToBackStack("5")
                     .commit();
 
         }

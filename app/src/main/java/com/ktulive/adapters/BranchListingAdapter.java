@@ -111,6 +111,7 @@ public class BranchListingAdapter extends RecyclerView.Adapter<BranchListingAdap
 
             fragmentManager.beginTransaction()
                     .replace(R.id.homeFrame,fragment)
+                    .addToBackStack("3")
                     .commit();
 
         }

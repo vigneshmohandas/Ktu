@@ -39,6 +39,7 @@ class CourseChoosingFragment : Fragment() {
 
         activity.supportFragmentManager.beginTransaction()
                 .replace(R.id.homeFrame,fragment)
+                .addToBackStack("2")
                 .commit()
 
 

@@ -57,7 +57,7 @@ public class SemesterChoosingFragment extends Fragment{
                 bundle.putString("branch_identifier",branch_identifier);
                 fragment.setArguments(bundle);
 
-                getFragmentManager().beginTransaction().replace(R.id.homeFrame,fragment).commit();
+                getFragmentManager().beginTransaction().replace(R.id.homeFrame,fragment).addToBackStack("4").commit();
 
             }
         });
