@@ -15,27 +15,23 @@ import com.ktulive.ClickListener;
 import com.ktulive.R;
 import com.ktulive.extra.Constants;
 import com.ktulive.fragments.ModuleandReferenceDisplayFragment;
-import com.ktulive.fragments.SemesterChoosingFragment;
-import com.ktulive.models.Branch;
 import com.ktulive.models.Subjects;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.security.auth.Subject;
-
 /**
  * Created by asnimpansari on 8/26/17.
  */
 
-public class SubjectListingAdapter extends RecyclerView.Adapter<SubjectListingAdapter.ViewHolder>{
+public class SubjectListingArrayAdapter extends RecyclerView.Adapter<SubjectListingArrayAdapter.ViewHolder>{
 
    static List<Subjects> branchList;
     String branch_name;
 
 
 
-    public SubjectListingAdapter(ArrayList<Subjects> branchList, Context context, FragmentManager fm) {
+    public SubjectListingArrayAdapter(ArrayList<Subjects> branchList, Context context, FragmentManager fm) {
         this.branchList = branchList;
         this.context = context;
         this.fm = fm;
@@ -56,8 +52,6 @@ public class SubjectListingAdapter extends RecyclerView.Adapter<SubjectListingAd
     public void onBindViewHolder(ViewHolder holder, int position) {
         branch_name = branchList.get(position).subject_name;
         holder.branch_name.setText(branch_name);
-
-        System.out.print(position +"******");
         holder.branch_name.setBackgroundColor(Constants.grid_colors[position]);
 
 
@@ -112,10 +106,10 @@ public class SubjectListingAdapter extends RecyclerView.Adapter<SubjectListingAd
             Fragment fragment = new ModuleandReferenceDisplayFragment();
 
             Bundle bundle = new Bundle();
-            bundle.putString("subject_name", SubjectListingAdapter.branchList.get(pos).subject_name);
-            bundle.putString("subject_code", SubjectListingAdapter.branchList.get(pos).subject_code);
+            bundle.putString("subject_name", SubjectListingArrayAdapter.branchList.get(pos).subject_name);
+            bundle.putString("subject_code", SubjectListingArrayAdapter.branchList.get(pos).subject_code);
 
-            Log.e("SUB_CODE",SubjectListingAdapter.branchList.get(pos).subject_code);
+            Log.e("SUB_CODE", SubjectListingArrayAdapter.branchList.get(pos).subject_code);
             fragment.setArguments(bundle);
 
             fragmentManager.beginTransaction()

@@ -28,5 +28,9 @@ public class Constants {
             0x800A237E,
 
             0x80AA00FF,
+            0x80DD2C00,
+            0x803E2723,
+            0x80FFD600,
+            0x80F57F17,
     };
 }

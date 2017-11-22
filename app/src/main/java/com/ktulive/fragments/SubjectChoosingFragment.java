@@ -3,6 +3,7 @@ package com.ktulive.fragments;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -53,6 +54,7 @@ public class SubjectChoosingFragment extends Fragment {
         subjectLisitingRecycler = (RecyclerView) view.findViewById(R.id.subjectListRecycler);
 
         subjectLisitingRecycler.setHasFixedSize(true);
+        subjectLisitingRecycler.setItemAnimator(new DefaultItemAnimator());
         subjectLisitingRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
         final SubjectListingAdapter subjectListingAdapter = new SubjectListingAdapter(subjectses,getContext(),getFragmentManager());
         subjectLisitingRecycler.setAdapter(subjectListingAdapter);

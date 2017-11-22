@@ -37,7 +37,11 @@ class HomeScreen : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-
+        if (fragmentManager.backStackEntryCount == 0) {
+            super.onBackPressed()
+        } else {
+            fragmentManager.popBackStack()
+        }
     }
 }
 

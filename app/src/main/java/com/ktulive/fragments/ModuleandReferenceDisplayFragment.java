@@ -68,7 +68,7 @@ public class ModuleandReferenceDisplayFragment extends Fragment {
 
 
         TextView sub_name = (TextView) view.findViewById(R.id.subject_name);
-        sub_name.setText(subject_name);
+        sub_name.setText(subject_name + subject_code);
 
 
 
@@ -118,6 +118,7 @@ public class ModuleandReferenceDisplayFragment extends Fragment {
 
 
     }
+    
 
 
 

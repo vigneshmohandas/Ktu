@@ -66,7 +66,6 @@ class BranchChoosingFragment : Fragment() {
         fun newInstance(): BranchChoosingFragment {
             var mapFragment = BranchChoosingFragment()
             var args = Bundle()
-//            args.putString("branch_name","COMPUTER SCINE")
             mapFragment.arguments = args
             return mapFragment
         }

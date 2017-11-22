@@ -18,4 +18,37 @@
         <item name="android:textAppearance">@style/TextAppearance.AppCompat.Display1</item>
     </style>
 
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+    <style name="ToolBarStyle" parent="Theme.AppCompat">
+        <item name="android:textColorPrimary">@color/colorPrimary</item>
+        <item name="android:textColorSecondary">@android:color/black</item>
+        <item name="actionMenuTextColor">@android:color/holo_blue_bright</item>
+
+    </style>
+    <style name="btns" parent="android:Theme">
+        <item name="android:padding">10dp</item>
+        <item name="android:layout_height">35dp</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:background">@drawable/unselected_bg</item>
+        <item name="android:textColor">#000000</item>
+
+
+    </style>
+    <style name="title" parent="android:Theme">
+        <item name="android:padding">10dp</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textStyle">bold</item>
+
+
+    </style>
+
 </resources>
