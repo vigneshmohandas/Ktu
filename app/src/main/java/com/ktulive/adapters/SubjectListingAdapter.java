@@ -11,7 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.ktulive.R;
-import com.ktulive.fragments.ModuleandReferenceDisplayActivity;
+import com.ktulive.actvities.ModuleandReferenceDisplayActivity;
 import com.ktulive.models.Subjects;
 
 import java.util.ArrayList;

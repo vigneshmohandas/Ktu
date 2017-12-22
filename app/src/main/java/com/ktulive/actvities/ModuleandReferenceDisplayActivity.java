@@ -1,12 +1,9 @@
-package com.ktulive.fragments;
+package com.ktulive.actvities;
 
 import android.app.ProgressDialog;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -32,7 +29,7 @@ public class ModuleandReferenceDisplayActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.modules_listing_without_recycler);
         individualModuleArrayList = new ArrayList<>();
-        moduleAndReferenceArrayAdapter = new ModuleAndReferenceArrayAdapter(this,R.layout.template_sem_number_layout,individualModuleArrayList);
+        moduleAndReferenceArrayAdapter = new ModuleAndReferenceArrayAdapter(this,R.layout.template_singlemodule,individualModuleArrayList);
         ListView mv  = (ListView)findViewById(R.id.mv);
         mv.setAdapter(moduleAndReferenceArrayAdapter);
         String subject_code =  getIntent().getStringExtra("subject_code");

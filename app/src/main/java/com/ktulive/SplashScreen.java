@@ -32,7 +32,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
-import com.ktulive.actvities.HomeScreen;
+import com.ktulive.actvities.MainActivity;
 import com.ktulive.extra.CusUtils;
 
 import java.util.HashMap;
@@ -213,7 +213,7 @@ public class SplashScreen extends AppCompatActivity {
                 public void run() {
                     // This method will be executed once the timer is over
                     // Start your app main activity
-                    Intent i = new Intent(SplashScreen.this, HomeScreen.class);
+                    Intent i = new Intent(SplashScreen.this, MainActivity.class);
                     startActivity(i);
 
                     // close this activity

@@ -22,7 +22,7 @@ import android.net.Uri
 import android.os.Build
 import android.support.annotation.RequiresApi
 
-import GeneralData
+import com.ktulive.GeneralData
 
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {

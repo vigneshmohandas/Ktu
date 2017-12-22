@@ -37,25 +37,19 @@ public class ModuleCardAdapter extends ArrayAdapter<IndividualModule> {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-//        return super.getView(position, convertView, parent);
+        super.getView(position, convertView, parent);
         View row = convertView;
         IndividualModuleHolder holder = null;
         if(row == null){
             LayoutInflater inflater = ((Activity)context).getLayoutInflater();
             row = inflater.inflate(layoutResourseID,parent,false);
             holder = new IndividualModuleHolder();
-
-//            holder.moduleTitle = (TextView) row.findViewById(R.id.moduleTitle);
-//            holder.moduleContent =  (TextView) row.findViewById(R.id.moduleContent);
-
             row.setTag(holder);
 
         }
         else{
             holder = (IndividualModuleHolder)row.getTag();
         }
-
-
         IndividualModule individualModule = getItem(position);
         holder.moduleName.setText("MODULE " + (position + 1));
             holder.moduleContent.setText(individualModule.description);
@@ -66,12 +60,8 @@ public class ModuleCardAdapter extends ArrayAdapter<IndividualModule> {
     }
 
 
-    static class IndividualModuleHolder{
+   public static class IndividualModuleHolder{
         TextView moduleName;
         TextView moduleContent;
-
-//        TextView blood_group;
     }
-
-
 }

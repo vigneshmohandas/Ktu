@@ -29,7 +29,7 @@
             android:name=".actvities.SubjectChoosingActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme"></activity>  <activity
-            android:name=".fragments.ModuleandReferenceDisplayActivity"
+            android:name=".actvities.ModuleandReferenceDisplayActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme"></activity>
     </application>
