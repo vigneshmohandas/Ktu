@@ -14,7 +14,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:padding="10dp"
-        android:background="@drawable/rounded_corner_bg"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,7 +22,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/course"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -34,51 +34,284 @@
 
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/btech"
             android:layout_width="wrap_content"
-            android:layout_height="35dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
 
             android:layout_marginTop="8dp"
             android:text="BTECH"
-            android:theme="@style/btns"
+            android:theme="@style/button_unselected_style"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView6" />
+            app:layout_constraintTop_toBottomOf="@+id/course" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/mtech"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:text="MTECH"
-            android:theme="@style/btns"
-            app:layout_constraintStart_toEndOf="@+id/textView3"
-            app:layout_constraintTop_toBottomOf="@+id/textView6" />
+            android:theme="@style/button_unselected_style"
+            app:layout_constraintStart_toEndOf="@+id/btech"
+            app:layout_constraintTop_toBottomOf="@+id/course" />
 
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/cardView1"
+        android:id="@+id/streamcard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:background="@drawable/rounded_corner_bg"
+
+        android:layout_marginTop="8dp"
         android:padding="10dp"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView">
 
-        app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:id="@+id/stream"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Stream"
 
-        <GridView
-            android:id="@+id/gv"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"></GridView>
+            android:theme="@style/title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/cse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="8dp"
+            android:text="CSE "
+            android:theme="@style/button_unselected_style"
+            app:layout_constraintEnd_toStartOf="@+id/mech"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/stream" />
+
+        <TextView
+            android:id="@+id/mech"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="MECH"
+            android:theme="@style/button_unselected_style"
+            app:layout_constraintEnd_toStartOf="@+id/button2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/cse"
+            app:layout_constraintTop_toBottomOf="@+id/stream" />
+
+        <TextView
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="EEE"
+            android:theme="@style/button_unselected_style"
+
+            app:layout_constraintEnd_toStartOf="@+id/civil"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/mech"
+            app:layout_constraintTop_toBottomOf="@+id/stream" />
+
+        <TextView
+            android:id="@+id/civil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="CIVIL"
+            android:theme="@style/button_unselected_style"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/button2"
+            app:layout_constraintTop_toBottomOf="@+id/stream" />
+
+        <TextView
+            android:id="@+id/ece"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ECE"
+            android:theme="@style/button_unselected_style"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/chem"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cse"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/chem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="CHEM"
+
+            android:theme="@style/button_unselected_style"
+            app:layout_constraintBottom_toBottomOf="@+id/ece"
+            app:layout_constraintEnd_toStartOf="@+id/prod"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/ece"
+            app:layout_constraintTop_toBottomOf="@+id/mech"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/prod"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="PROD"
+
+            android:theme="@style/button_unselected_style"
+            app:layout_constraintBottom_toBottomOf="@+id/chem"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/chem"
+            app:layout_constraintTop_toTopOf="@+id/chem"
+            app:layout_constraintVertical_bias="1.0" />
 
     </android.support.constraint.ConstraintLayout>
 
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="152dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/streamcard">
+
+        <TextView
+            android:id="@+id/semster"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Semester"
+            android:theme="@style/title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/sem1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:theme="@style/button_unselected_style"
+            app:layout_constraintBottom_toBottomOf="@+id/sem2"
+            app:layout_constraintEnd_toStartOf="@+id/sem2"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/sem2" />
+
+        <TextView
+            android:id="@+id/sem2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2"
+            android:theme="@style/button_unselected_style"
+            app:layout_constraintBottom_toBottomOf="@+id/sem3"
+            app:layout_constraintEnd_toStartOf="@+id/sem3"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/sem1"
+            app:layout_constraintTop_toTopOf="@+id/sem3" />
+
+        <TextView
+            android:id="@+id/sem3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3"
+            android:theme="@style/button_unselected_style"
+            app:layout_constraintBottom_toBottomOf="@+id/sem4"
+            app:layout_constraintEnd_toStartOf="@+id/sem4"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/sem2"
+            app:layout_constraintTop_toTopOf="@+id/sem4" />
+
+        <TextView
+            android:id="@+id/sem4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="4"
+            android:theme="@style/button_unselected_style"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/sem3"
+            app:layout_constraintTop_toBottomOf="@+id/semster" />
+
+        <TextView
+            android:id="@+id/sem5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5"
+            android:theme="@style/button_unselected_style"
+            app:layout_constraintBottom_toBottomOf="@+id/sem6"
+            app:layout_constraintEnd_toStartOf="@+id/sem6"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/sem6" />
+
+        <TextView
+            android:id="@+id/sem6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="6"
+            android:theme="@style/button_unselected_style"
+            app:layout_constraintBottom_toBottomOf="@+id/sem7"
+            app:layout_constraintEnd_toStartOf="@+id/sem7"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/sem5"
+            app:layout_constraintTop_toTopOf="@+id/sem7" />
+
+        <TextView
+            android:id="@+id/sem7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="7"
+            android:theme="@style/button_unselected_style"
+            app:layout_constraintBottom_toBottomOf="@+id/sem8"
+            app:layout_constraintEnd_toStartOf="@+id/sem8"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/sem6"
+            app:layout_constraintTop_toTopOf="@+id/sem8" />
+
+        <TextView
+            android:id="@+id/sem8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="8"
+            android:theme="@style/button_unselected_style"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/sem7"
+            app:layout_constraintTop_toBottomOf="@+id/sem3" />
+    </android.support.constraint.ConstraintLayout>
+
+    <Button
+        android:id="@+id/find"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FIND"
+        tools:layout_editor_absoluteX="138dp"
+        tools:layout_editor_absoluteY="469dp" />
 
 
 </android.support.constraint.ConstraintLayout>

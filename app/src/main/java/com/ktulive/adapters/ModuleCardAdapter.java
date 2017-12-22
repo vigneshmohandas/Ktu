@@ -45,8 +45,8 @@ public class ModuleCardAdapter extends ArrayAdapter<IndividualModule> {
             row = inflater.inflate(layoutResourseID,parent,false);
             holder = new IndividualModuleHolder();
 
-            holder.moduleName = (TextView) row.findViewById(R.id.moduleName);
-            holder.moduleContent =  (TextView) row.findViewById(R.id.moduleContent);
+//            holder.moduleTitle = (TextView) row.findViewById(R.id.moduleTitle);
+//            holder.moduleContent =  (TextView) row.findViewById(R.id.moduleContent);
 
             row.setTag(holder);
 
@@ -59,8 +59,6 @@ public class ModuleCardAdapter extends ArrayAdapter<IndividualModule> {
         IndividualModule individualModule = getItem(position);
         holder.moduleName.setText("MODULE " + (position + 1));
             holder.moduleContent.setText(individualModule.description);
-
-
 
         return  row;
 

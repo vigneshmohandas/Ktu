@@ -29,7 +29,7 @@ public class ModuleAndReferenceAdapter extends RecyclerView.Adapter<ModuleAndRef
 
 
 
-    public ModuleAndReferenceAdapter(ArrayList<IndividualModule> branchList, Context context, FragmentManager fm) {
+    public ModuleAndReferenceAdapter(ArrayList<IndividualModule> branchList) {
         this.module_list = branchList;
         this.context = context;
         this.fm = fm;

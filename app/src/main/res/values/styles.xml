@@ -29,17 +29,19 @@
         <item name="actionMenuTextColor">@android:color/holo_blue_bright</item>
 
     </style>
-    <style name="btns" parent="android:Theme">
+    <style name="button_unselected_style" parent="android:Theme">
         <item name="android:padding">10dp</item>
         <item name="android:layout_height">35dp</item>
         <item name="android:layout_marginStart">8dp</item>
         <item name="android:layout_marginTop">8dp</item>
         <item name="android:layout_marginBottom">8dp</item>
-        <item name="android:background">@drawable/unselected_bg</item>
-        <item name="android:textColor">#000000</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/button_unselected_bg</item>
+        <item name="android:textColor">@color/colorPrimary</item>
 
 
     </style>
+
     <style name="title" parent="android:Theme">
         <item name="android:padding">10dp</item>
         <item name="android:layout_marginStart">8dp</item>

@@ -12,7 +12,8 @@ import android.widget.TextView;
 
 import com.ktulive.R;
 import com.ktulive.fragments.ModuleandReferenceDisplayActivity;
-import com.ktulive.models.Subjects;
+import com.ktulive.models.IndividualModule;
+import com.uncopt.android.widget.text.justify.JustifiedTextView;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -21,12 +22,12 @@ import java.util.Date;
  * Created by asnim on 26/05/17.
  */
 
-public class SubjectListingAdapter extends ArrayAdapter<Subjects> {
+public class ModuleAndReferenceArrayAdapter extends ArrayAdapter<IndividualModule> {
     Context context;
     int layoutResourseID;
-    ArrayList<Subjects> data  = null;
+    ArrayList<IndividualModule> data  = null;
     Date news_date;
-    public SubjectListingAdapter(Context context, int layoutResourceId, ArrayList<Subjects> data){
+    public ModuleAndReferenceArrayAdapter(Context context, int layoutResourceId, ArrayList<IndividualModule> data){
         super(context,layoutResourceId,data);
         data = new ArrayList<>();
         this.layoutResourseID = layoutResourceId;
@@ -41,11 +42,10 @@ public class SubjectListingAdapter extends ArrayAdapter<Subjects> {
         View row = convertView;
         IndividualModuleHolder holder = null;
         if(row == null){
-            row = LayoutInflater.from(context).inflate(R.layout.row_subjectname,parent,false);
+            row = LayoutInflater.from(context).inflate(R.layout.template_singlemodule,parent,false);
             holder = new IndividualModuleHolder();
-            holder.moduleName = (TextView) row.findViewById(R.id.sem_tile_text);
-
-
+            holder.moduleTitle = (TextView) row.findViewById(R.id.module_title);
+            holder.moduleBody = (JustifiedTextView) row.findViewById(R.id.module_body);
             row.setTag(holder);
 
         }
@@ -53,28 +53,10 @@ public class SubjectListingAdapter extends ArrayAdapter<Subjects> {
             holder = (IndividualModuleHolder)row.getTag();
         }
 
+        IndividualModule  individualModule = getItem(position);
 
-        final Subjects individualModule = getItem(position);
-
-        holder.moduleName.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-
-                Intent i = new Intent(getContext(), ModuleandReferenceDisplayActivity.class);
-                i.putExtra("subject_code",individualModule.getSubject_code());
-                i.putExtra("subject_name",individualModule.getSubject_name());
-
-                context.startActivity(i);
-
-
-
-
-            }
-        });
-
-        holder.moduleName.setText(individualModule.subject_name);
-
+        holder.moduleBody.setText(individualModule.description);
+        holder.moduleTitle.setText("Module " + position+1);
 
         return  row;
 
@@ -83,7 +65,8 @@ public class SubjectListingAdapter extends ArrayAdapter<Subjects> {
 
 
     static class IndividualModuleHolder{
-        TextView moduleName;
+        TextView moduleTitle;
+        JustifiedTextView moduleBody;
 
     }
 

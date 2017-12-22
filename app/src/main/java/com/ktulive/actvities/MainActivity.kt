@@ -1,8 +1,8 @@
 package com.ktulive.actvities
 
+import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
-import android.support.design.widget.Snackbar
 import android.support.design.widget.NavigationView
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
@@ -12,28 +12,149 @@ import android.view.MenuItem
 import com.ktulive.R
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
-import android.graphics.Color.parseColor
 import android.graphics.drawable.ColorDrawable
+import android.widget.TextView
+import android.widget.Toast
 
+import kotlinx.android.synthetic.main.content_main.*
+import android.content.Intent
+import android.net.Uri
+import android.os.Build
+import android.support.annotation.RequiresApi
+
+import GeneralData
 
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+    var sem:Int? = null
+    var branch:String? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        var shared_pref_editor = getSharedPreferences("ktulive", Context.MODE_PRIVATE).edit()
         setSupportActionBar(toolbar)
+        btech.setOnClickListener {
+            btech.setBackgroundResource(R.drawable.button_selected_bg)
+            btech.setTextColor(getColor(R.color.white))
 
+            mtech.setBackgroundResource(R.drawable.button_unselected_bg)
+            mtech.setTextColor(getColor(R.color.colorPrimary))
+
+        }
+        mtech.setOnClickListener {
+            mtech.setBackgroundResource(R.drawable.button_selected_bg)
+            mtech.setTextColor(getColor(R.color.white))
+
+            btech.setBackgroundResource(R.drawable.button_unselected_bg)
+            btech.setTextColor(getColor(R.color.colorPrimary))
+
+
+            val url = "https://ktu.edu.in/eu/acd/academicRegulationsMtech.htm"
+            val i = Intent(Intent.ACTION_VIEW)
+            i.data = Uri.parse(url)
+            startActivity(i)
+        }
+
+        sem1.setOnClickListener {
+
+            shared_pref_editor.putInt("sem",1)
+            shared_pref_editor.apply()
+
+            clearAllandHighlightRequiredSemester(sem1)
+            sem = 1
+
+        }
+        sem2.setOnClickListener {
+            shared_pref_editor.putInt("sem",2)
+            shared_pref_editor.apply()
+            clearAllandHighlightRequiredSemester(sem2)
+            sem = 2
+
+
+
+
+        }
+        sem3.setOnClickListener {
+            shared_pref_editor.putInt("sem",3)
+            shared_pref_editor.apply()
+            clearAllandHighlightRequiredSemester(sem3)
+            sem = 3
+
+
+
+        }
+        sem4.setOnClickListener {
+            shared_pref_editor.putInt("sem",4)
+            shared_pref_editor.apply()
+            clearAllandHighlightRequiredSemester(sem4)
+            sem = 4
+
+
+        }
+        sem5.setOnClickListener {
+            shared_pref_editor.putInt("sem",5)
+            shared_pref_editor.apply()
+            clearAllandHighlightRequiredSemester(sem5)
+            sem = 5
+
+
+        }
+        sem6.setOnClickListener {
+            shared_pref_editor.putInt("sem",6)
+            shared_pref_editor.apply()
+            clearAllandHighlightRequiredSemester(sem6)
+            sem = 6
+
+
+        }
+        sem7.setOnClickListener {
+            shared_pref_editor.putInt("sem",7)
+            shared_pref_editor.apply()
+            clearAllandHighlightRequiredSemester(sem7)
+            sem = 7
+
+
+        }
+        sem8.setOnClickListener {
+            shared_pref_editor.putInt("sem",8)
+            shared_pref_editor.apply()
+            clearAllandHighlightRequiredSemester(sem8)
+            sem = 8
+
+
+
+        }
+
+        cse.setOnClickListener {
+
+            branch = GeneralData.getBranchCode("CSE")
+        }
+
+        find.setOnClickListener {
+
+            if ((branch!=null) && (sem !=null)){
+
+                var i:Intent  = Intent(applicationContext, SubjectChoosingActivity::class.java)
+                i.putExtra("branch_sem",branch+sem.toString())
+                startActivity(i)
+
+
+
+
+            }
+
+            Toast.makeText(applicationContext,branch+sem.toString(),Toast.LENGTH_SHORT).show()
+
+
+        }
 
 
 
 
         toolbar!!.background  =(ColorDrawable(Color.parseColor("#ffffff")))
 
-        fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
-        }
 
         val toggle = ActionBarDrawerToggle(
                 this, drawer_layout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
@@ -93,4 +214,33 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
     }
+
+
+    @RequiresApi(Build.VERSION_CODES.M)
+    fun clearAllandHighlightRequiredSemester(highlightsem:TextView){
+        sem1.setBackgroundResource(R.drawable.button_unselected_bg)
+        sem2.setBackgroundResource(R.drawable.button_unselected_bg)
+        sem3.setBackgroundResource(R.drawable.button_unselected_bg)
+        sem4.setBackgroundResource(R.drawable.button_unselected_bg)
+        sem5.setBackgroundResource(R.drawable.button_unselected_bg)
+        sem6.setBackgroundResource(R.drawable.button_unselected_bg)
+        sem7.setBackgroundResource(R.drawable.button_unselected_bg)
+        sem8.setBackgroundResource(R.drawable.button_unselected_bg)
+        sem1.setTextColor(getColor(R.color.colorPrimary))
+        sem2.setTextColor(getColor(R.color.colorPrimary))
+        sem3.setTextColor(getColor(R.color.colorPrimary))
+        sem4.setTextColor(getColor(R.color.colorPrimary))
+        sem5.setTextColor(getColor(R.color.colorPrimary))
+        sem6.setTextColor(getColor(R.color.colorPrimary))
+        sem7.setTextColor(getColor(R.color.colorPrimary))
+        sem8.setTextColor(getColor(R.color.colorPrimary))
+        highlightsem.setBackgroundResource(R.drawable.button_selected_bg)
+        highlightsem.setTextColor(getColor(R.color.white))
+
+
+
+    }
+
+
+
 }

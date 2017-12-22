@@ -14,7 +14,6 @@ import android.widget.TextView;
 import com.ktulive.ClickListener;
 import com.ktulive.R;
 import com.ktulive.extra.Constants;
-import com.ktulive.fragments.SemesterChoosingFragment;
 import com.ktulive.models.Branch;
 
 import java.util.ArrayList;
@@ -102,17 +101,12 @@ public class BranchListingAdapter extends RecyclerView.Adapter<BranchListingAdap
             Log.e("ADPATES",pos+"")
             ;
 
-            Fragment fragment = new SemesterChoosingFragment();
+
 
             Bundle bundle = new Bundle();
             bundle.putString("branch_name",BranchListingAdapter.branchList.get(pos).branch_name);
             bundle.putString("branch_code",BranchListingAdapter.branchList.get(pos).branch_code);
-            fragment.setArguments(bundle);
 
-            fragmentManager.beginTransaction()
-                    .replace(R.id.homeFrame,fragment)
-                    .addToBackStack("3")
-                    .commit();
 
         }
 
