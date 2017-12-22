@@ -3,8 +3,12 @@ package com.ktulive.actvities;
 import android.graphics.Color;
 import android.support.annotation.Nullable;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ListView;
 import com.ktulive.R;
 import com.ktulive.adapters.SubjectListingAdapter;
@@ -18,29 +22,32 @@ import android.graphics.drawable.ColorDrawable;
 
 import java.util.ArrayList;
 
-public class SubjectChoosingActivity extends AppCompatActivity {
+public class SubjectChoosingActivity extends Fragment {
+
+
 
     DatabaseReference databaseReference;
     Subjects individial_sub;
     ArrayList<Subjects> subjectses = new ArrayList<>();
 
+    @Nullable
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_subjectlist);
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.activity_subjectlist,container,false);
+    }
 
-        android.support.v7.widget.Toolbar toolbar= (android.support.v7.widget.Toolbar)findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
 
-        toolbar.setBackground(new ColorDrawable(Color.parseColor("#ffffff")));
 
-        final SubjectListingAdapter subjectListingAdapter  = new SubjectListingAdapter(getBaseContext(),R.layout.support_simple_spinner_dropdown_item,subjectses);
+        final SubjectListingAdapter subjectListingAdapter  = new SubjectListingAdapter(getContext(),R.layout.support_simple_spinner_dropdown_item,subjectses);
 
-        ListView lv = (ListView)findViewById(R.id.subjectListRecycler) ;
+        ListView lv = (ListView) view.findViewById(R.id.subjectListRecycler) ;
         lv.setAdapter(subjectListingAdapter);
 
-      String branch_sem =  getIntent().getStringExtra("branch_sem");
+      String branch_sem = getArguments().getString("branch_sem");
         databaseReference  = CusUtils.getDatabase().getReference().child("btech").child("subjects").child(branch_sem);
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
