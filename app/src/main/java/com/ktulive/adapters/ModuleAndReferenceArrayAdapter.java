@@ -54,21 +54,13 @@ public class ModuleAndReferenceArrayAdapter extends ArrayAdapter<IndividualModul
         }
 
         IndividualModule  individualModule = getItem(position);
-
         holder.moduleBody.setText(individualModule.description);
-        holder.moduleTitle.setText("Module " + position+1);
-
+        holder.moduleTitle.setText("Module " + (position+1));
         return  row;
-
-
     }
-
 
     static class IndividualModuleHolder{
         TextView moduleTitle;
         JustifiedTextView moduleBody;
-
     }
-
-
 }
