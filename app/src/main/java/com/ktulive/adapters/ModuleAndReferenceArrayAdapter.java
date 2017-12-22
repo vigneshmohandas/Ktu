@@ -40,7 +40,7 @@ public class ModuleAndReferenceArrayAdapter extends ArrayAdapter<IndividualModul
         View row = convertView;
         IndividualModuleHolder holder = null;
         if(row == null){
-            row = LayoutInflater.from(context).inflate(R.layout.template_singlemodule,parent,false);
+            row = LayoutInflater.from(context).inflate(R.layout.row_singlemodule,parent,false);
             holder = new IndividualModuleHolder();
             holder.moduleTitle = (TextView) row.findViewById(R.id.module_title);
             holder.moduleBody = (JustifiedTextView) row.findViewById(R.id.module_body);

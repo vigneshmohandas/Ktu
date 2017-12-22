@@ -28,6 +28,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:text="Courses"
+            android:textStyle="bold"
             android:theme="@style/title"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -90,7 +91,6 @@
             android:id="@+id/cse"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:layout_marginTop="8dp"
             android:text="CSE "
             android:theme="@style/button_unselected_style"
@@ -106,13 +106,13 @@
             android:layout_marginTop="8dp"
             android:text="MECH"
             android:theme="@style/button_unselected_style"
-            app:layout_constraintEnd_toStartOf="@+id/button2"
+            app:layout_constraintEnd_toStartOf="@+id/eee"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/cse"
             app:layout_constraintTop_toBottomOf="@+id/stream" />
 
         <TextView
-            android:id="@+id/button2"
+            android:id="@+id/eee"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -134,7 +134,7 @@
 
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/button2"
+            app:layout_constraintStart_toEndOf="@+id/eee"
             app:layout_constraintTop_toBottomOf="@+id/stream" />
 
         <TextView
@@ -160,18 +160,18 @@
 
             android:theme="@style/button_unselected_style"
             app:layout_constraintBottom_toBottomOf="@+id/ece"
-            app:layout_constraintEnd_toStartOf="@+id/prod"
+            app:layout_constraintEnd_toStartOf="@+id/arch"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/ece"
             app:layout_constraintTop_toBottomOf="@+id/mech"
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView
-            android:id="@+id/prod"
+            android:id="@+id/arch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
-            android:text="PROD"
+            android:text="ARCH"
 
             android:theme="@style/button_unselected_style"
             app:layout_constraintBottom_toBottomOf="@+id/chem"
@@ -204,6 +204,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:text="Semester"
+            android:textStyle="bold"
             android:theme="@style/title"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -309,9 +310,16 @@
         android:id="@+id/find"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="FIND"
-        tools:layout_editor_absoluteX="138dp"
-        tools:layout_editor_absoluteY="469dp" />
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="SEE SUBJECTS"
+        android:background="@color/colorPrimary"
+        android:textColor="#ffffff"
+        android:padding="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
 
 </android.support.constraint.ConstraintLayout>

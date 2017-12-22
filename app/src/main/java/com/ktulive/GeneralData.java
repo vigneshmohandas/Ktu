@@ -15,7 +15,12 @@ public class GeneralData {
         branchAndCode = new HashMap<>();
 
         branchAndCode.put("CSE","r");
+        branchAndCode.put("ARCH","a");
+        branchAndCode.put("ECE","t");
         branchAndCode.put("MECH","m");
+        branchAndCode.put("CHEM","h");
+        branchAndCode.put("EEE","e");
+        branchAndCode.put("CIVIL","c");
         return branchAndCode.get(branchShort);
 
 

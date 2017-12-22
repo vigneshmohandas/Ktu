@@ -29,7 +29,7 @@ public class ModuleandReferenceDisplayActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.modules_listing_without_recycler);
         individualModuleArrayList = new ArrayList<>();
-        moduleAndReferenceArrayAdapter = new ModuleAndReferenceArrayAdapter(this,R.layout.template_singlemodule,individualModuleArrayList);
+        moduleAndReferenceArrayAdapter = new ModuleAndReferenceArrayAdapter(this,R.layout.row_singlemodule,individualModuleArrayList);
         ListView mv  = (ListView)findViewById(R.id.mv);
         mv.setAdapter(moduleAndReferenceArrayAdapter);
         String subject_code =  getIntent().getStringExtra("subject_code");

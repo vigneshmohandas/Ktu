@@ -57,6 +57,71 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             startActivity(i)
         }
 
+
+        cse.setOnClickListener {
+
+            clearAllandHighlightRequiredBranches(cse)
+
+            branch = GeneralData.getBranchCode("CSE")
+            shared_pref_editor.putString("branch",branch)
+            shared_pref_editor.apply()
+
+        }
+        civil.setOnClickListener {
+
+            clearAllandHighlightRequiredBranches(civil)
+
+            branch = GeneralData.getBranchCode("CIVIL")
+            shared_pref_editor.putString("branch",branch)
+            shared_pref_editor.apply()
+
+        }
+        mech.setOnClickListener {
+
+            clearAllandHighlightRequiredBranches(mech)
+
+            branch = GeneralData.getBranchCode("MECH")
+            shared_pref_editor.putString("branch",branch)
+            shared_pref_editor.apply()
+
+        }
+        eee.setOnClickListener {
+
+            clearAllandHighlightRequiredBranches(eee)
+
+            branch = GeneralData.getBranchCode("EEE")
+            shared_pref_editor.putString("branch",branch)
+            shared_pref_editor.apply()
+
+        }
+        arch.setOnClickListener {
+
+            clearAllandHighlightRequiredBranches(arch)
+
+            branch = GeneralData.getBranchCode("ARCH")
+            shared_pref_editor.putString("branch",branch)
+            shared_pref_editor.apply()
+
+        }
+        ece.setOnClickListener {
+
+            clearAllandHighlightRequiredBranches(ece)
+
+            branch = GeneralData.getBranchCode("ECE")
+            shared_pref_editor.putString("branch",branch)
+            shared_pref_editor.apply()
+
+        }
+        chem.setOnClickListener {
+
+            clearAllandHighlightRequiredBranches(chem)
+
+            branch = GeneralData.getBranchCode("CHEM")
+            shared_pref_editor.putString("branch",branch)
+            shared_pref_editor.apply()
+
+        }
+
         sem1.setOnClickListener {
 
             shared_pref_editor.putInt("sem",1)
@@ -127,11 +192,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         }
 
-        cse.setOnClickListener {
-
-            branch = GeneralData.getBranchCode("CSE")
-        }
-
         find.setOnClickListener {
 
             if ((branch!=null) && (sem !=null)){
@@ -139,10 +199,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 var i:Intent  = Intent(applicationContext, SubjectChoosingActivity::class.java)
                 i.putExtra("branch_sem",branch+sem.toString())
                 startActivity(i)
-
-
-
-
             }
 
             Toast.makeText(applicationContext,branch+sem.toString(),Toast.LENGTH_SHORT).show()
@@ -240,6 +296,34 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
 
     }
+
+    fun clearAllandHighlightRequiredBranches(highlightbranch:TextView){
+        cse.setBackgroundResource(R.drawable.button_unselected_bg)
+        civil.setBackgroundResource(R.drawable.button_unselected_bg)
+        mech.setBackgroundResource(R.drawable.button_unselected_bg)
+        arch.setBackgroundResource(R.drawable.button_unselected_bg)
+        ece.setBackgroundResource(R.drawable.button_unselected_bg)
+        eee.setBackgroundResource(R.drawable.button_unselected_bg)
+        chem.setBackgroundResource(R.drawable.button_unselected_bg)
+
+        cse.setTextColor(getColor(R.color.colorPrimary))
+        civil.setTextColor(getColor(R.color.colorPrimary))
+        mech.setTextColor(getColor(R.color.colorPrimary))
+        arch.setTextColor(getColor(R.color.colorPrimary))
+        ece.setTextColor(getColor(R.color.colorPrimary))
+        eee.setTextColor(getColor(R.color.colorPrimary))
+        chem.setTextColor(getColor(R.color.colorPrimary))
+
+        highlightbranch.setBackgroundResource(R.drawable.button_selected_bg)
+        highlightbranch.setTextColor(getColor(R.color.white))
+
+
+
+    }
+
+
+
+
 
 
 
