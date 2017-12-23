@@ -26,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="5dp"
             android:text="Courses"
             android:textStyle="bold"
             android:theme="@style/title"
@@ -61,12 +61,13 @@
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/streamcard"
+        android:visibility="invisible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
 
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="5dp"
         android:padding="10dp"
 
         app:layout_constraintEnd_toEndOf="parent"
@@ -81,7 +82,10 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:text="Stream"
+            android:gravity="left"
+            android:foregroundGravity="left"
 
+            android:textAlignment="textStart"
             android:theme="@style/title"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -184,14 +188,13 @@
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/constraintLayout"
+        android:id="@+id/semstercard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="152dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="5dp"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -202,7 +205,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:text="Semester"
             android:textStyle="bold"
             android:theme="@style/title"
@@ -305,21 +308,6 @@
             app:layout_constraintStart_toEndOf="@+id/sem7"
             app:layout_constraintTop_toBottomOf="@+id/sem3" />
     </android.support.constraint.ConstraintLayout>
-
-    <Button
-        android:id="@+id/find"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="SEE SUBJECTS"
-        android:background="@color/colorPrimary"
-        android:textColor="#ffffff"
-        android:padding="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
 
 </android.support.constraint.ConstraintLayout>

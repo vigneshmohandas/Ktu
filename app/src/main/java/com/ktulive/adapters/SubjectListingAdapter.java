@@ -56,22 +56,6 @@ public class SubjectListingAdapter extends ArrayAdapter<Subjects> {
 
         final Subjects individualModule = getItem(position);
 
-        holder.moduleName.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-
-                Intent i = new Intent(getContext(), ModuleandReferenceDisplayActivity.class);
-                i.putExtra("subject_code",individualModule.getSubject_code());
-                i.putExtra("subject_name",individualModule.getSubject_name());
-
-                context.startActivity(i);
-
-
-
-
-            }
-        });
 
         holder.moduleName.setText(individualModule.subject_name);
 

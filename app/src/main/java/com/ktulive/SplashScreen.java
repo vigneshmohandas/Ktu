@@ -1,7 +1,10 @@
 package com.ktulive;
 
+import android.app.ProgressDialog;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -33,12 +36,25 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.ValueEventListener;
 import com.ktulive.actvities.MainActivity;
+import com.ktulive.db.SubjectDetails;
 import com.ktulive.extra.CusUtils;
+import com.ktulive.models.SubForSaving;
+import com.ktulive.models.Subjects;
 
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
+
+import static com.ktulive.db.SubjectDetails.MODULE_1;
+import static com.ktulive.db.SubjectDetails.MODULE_2;
+import static com.ktulive.db.SubjectDetails.MODULE_3;
+import static com.ktulive.db.SubjectDetails.MODULE_4;
+import static com.ktulive.db.SubjectDetails.MODULE_5;
+import static com.ktulive.db.SubjectDetails.MODULE_6;
+import static com.ktulive.db.SubjectDetails.REFERENCE;
+import static com.ktulive.db.SubjectDetails.SUBJECT_CODE;
+import static com.ktulive.db.SubjectDetails.TEXT_BOOK;
 
 
 public class SplashScreen extends AppCompatActivity {
@@ -52,14 +68,17 @@ public class SplashScreen extends AppCompatActivity {
 
     ImageView vtlo;
 
+    boolean isDBUptoDate ;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
-
-         HashSet<String> stringHashSet = new HashSet<>();
+        SharedPreferences sharedPreferences =  getSharedPreferences("ktulive",Context.MODE_PRIVATE);
+       final SharedPreferences.Editor  e = sharedPreferences.edit();
+        isDBUptoDate = sharedPreferences.getBoolean("isDBUptoDate",false);
 
 
 
@@ -70,7 +89,6 @@ public class SplashScreen extends AppCompatActivity {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 if(firebaseAuth.getCurrentUser() !=null){
                     googleButton.setVisibility(View.GONE);
-//                    Intent i
                     Toast.makeText(SplashScreen.this, "Welcome " + firebaseAuth.getCurrentUser().getDisplayName(), Toast.LENGTH_SHORT).show();
 //                    Toast.makeText(SplashScreen.this, "Welcome " + firebaseAuth.getCurrentUser().getPhotoUrl(), Toast.LENGTH_SHORT).show();
 
@@ -106,36 +124,72 @@ public class SplashScreen extends AppCompatActivity {
         });
 
 
+        final SubjectDetails subjectDetails = new SubjectDetails(this);
 
-
-
-
-
-
-//        Thread t = new Thread(new Runnable() {
-//            @Override
-//            public void run() {
-
+        final String modules[] = {MODULE_1,MODULE_2,MODULE_3,MODULE_4,MODULE_5,MODULE_6};
                 DatabaseReference databaseReference = CusUtils.getDatabase().getReference().child("btech").child("syllbus");
-                databaseReference.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
+                if(!isDBUptoDate) {
+                    databaseReference.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
 
 
-                        Iterable<DataSnapshot> dataSnapshotIterator = dataSnapshot.getChildren();
-                        for (DataSnapshot  dataSnapshot1 : dataSnapshotIterator){
-                            Log.e("KEY",dataSnapshot1.getKey());
+                            final ProgressDialog pd = new ProgressDialog(SplashScreen.this);
+                            pd.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+                            pd.setMessage("Please wait while  we download Details");
+                            pd.setCancelable(true);
+                            pd.setIndeterminate(true);
+                            pd.show();
+
+                            Iterable<DataSnapshot> dataSnapshotIterator = dataSnapshot.getChildren();
+                            for (DataSnapshot dataSnapshot1 : dataSnapshotIterator) {
+//                            Log.e("KEY",dataSnapshot1.getKey());
+//                            Log.e("INNERSNAP",dataSnapshot1.toString());
+                                SubForSaving subForSaving = dataSnapshot1.getValue(SubForSaving.class);
+//                            Log.e("SAVED",subForSaving.reference);
+
+                                ContentValues contentValues = new ContentValues();
+
+                                try {
+                                    contentValues.put(SUBJECT_CODE, dataSnapshot1.getKey());
+                                    contentValues.put(TEXT_BOOK, subForSaving.text_book);
+                                    contentValues.put(REFERENCE, subForSaving.reference);
+
+                                    contentValues.put(MODULE_1,subForSaving.modules.get(0).description);
+                                    contentValues.put(MODULE_2,subForSaving.modules.get(0).description);
+                                    contentValues.put(MODULE_3,subForSaving.modules.get(0).description);
+                                    contentValues.put(MODULE_4,subForSaving.modules.get(0).description);
+                                    contentValues.put(MODULE_5,subForSaving.modules.get(0).description);
+                                    contentValues.put(MODULE_6,subForSaving.modules.get(0).description);
+                                    subjectDetails.insertSubjects(contentValues);
+                                    Log.e("CONT",contentValues.toString());
+
+
+                                }
+                                catch (Exception e1){
+                                    subjectDetails.insertSubjects(contentValues);
+                                    Log.e("CONT",contentValues.toString());
+
+                                }
+
+
+                            }
+                            pd.dismiss();
+
+
+                            e.putBoolean("isDBUptoDate", true);
+                            e.apply();
+
+
                         }
-                    }
 
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
 
-                    }
-                });
-//            }
-//        });
-//        t.start();
+                        }
+                    });
+                }
+//
 
 
 
@@ -177,7 +231,7 @@ public class SplashScreen extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.e("GOOGLE_LOGIN", "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            googleButton.setVisibility(View.GONE);
+                            googleButton.setVisibility(View.INVISIBLE);
                             Toast.makeText(SplashScreen.this, "Welcome " + user.getDisplayName(), Toast.LENGTH_SHORT).show();
                             movetoMainScreen();
 //                            updateUI(user);
@@ -220,7 +274,6 @@ public class SplashScreen extends AppCompatActivity {
                     finish();
                 }
             }, SPLASH_TIME_OUT);
-
 
         }
         else {

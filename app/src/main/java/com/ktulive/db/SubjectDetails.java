@@ -22,7 +22,7 @@ import java.util.List;
 public class SubjectDetails extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "ktulive.db";
-    public static final String TABLE_NAME = "ktu";
+    public static final String TABLE_NAME = "subject_details";
     public static final String COLUMN_ID = "id";
     public static final String SUBJECT_CODE = "subject_code";
     public static final String MODULE_1 = "module_1";
@@ -44,11 +44,10 @@ public class SubjectDetails extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        // TODO Auto-generated method stub
 
         Log.e("DB","ON CREATE");
         db.execSQL(
-                "create table om " +
+                "create table  " +TABLE_NAME+" "+
                         "("+COLUMN_ID+" integer primary key," +
                         SUBJECT_CODE+" text,"+
                         MODULE_1+" text,"+
@@ -58,9 +57,7 @@ public class SubjectDetails extends SQLiteOpenHelper {
                         MODULE_5+" text,"+
                         MODULE_6+" text,"+
                         TEXT_BOOK+" text,"+
-
                         REFERENCE + " text)"
-
         );
 
         Log.e("DB","CREATED TABLE");
@@ -73,7 +70,7 @@ public class SubjectDetails extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean insertOrder (ContentValues contentValues) {
+    public boolean insertSubjects (ContentValues contentValues) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         long i =  db.insert(TABLE_NAME, null, contentValues);
@@ -107,12 +104,15 @@ public class SubjectDetails extends SQLiteOpenHelper {
         return numRows;
     }
 
+    public void getSubjectDetails(String  subject_id){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor res = db.rawQuery("select * from "+TABLE_NAME+" where "+ SUBJECT_CODE + " in ('"+subject_id+"')",null);
+        res.moveToFirst();
+        while(!res.isAfterLast()){
+            Log.e("M1",res.getString(res.getColumnIndex(SUBJECT_CODE)));
+            res.moveToNext();
+        }
 
-
-
-
-
-
-
+    }
 
 }

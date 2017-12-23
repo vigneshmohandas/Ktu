@@ -2,13 +2,13 @@ package com.ktulive.actvities
 
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.support.annotation.RequiresApi
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentTransaction
-import android.support.v4.content.ContextCompat.getColor
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,7 +16,6 @@ import android.widget.TextView
 import android.widget.Toast
 import com.ktulive.GeneralData
 import com.ktulive.R
-import com.ktulive.models.Sub
 import kotlinx.android.synthetic.main.fragment_home.*
 
 /**
@@ -25,10 +24,12 @@ import kotlinx.android.synthetic.main.fragment_home.*
 class HomeFragment():Fragment(){
     var sem:Int? = null
     var branch:String? = null
+    var branch_full:String? = null
+//    var shared_pref_editor:SharedPreferences.Editor?=null
 
     override fun onViewCreated(view: View?, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var shared_pref_editor = context.getSharedPreferences("ktulive", Context.MODE_PRIVATE).edit()
+       var shared_pref_editor = context.getSharedPreferences("ktulive", Context.MODE_PRIVATE).edit()
 
         btech.setOnClickListener {
             btech.setBackgroundResource(R.drawable.button_selected_bg)
@@ -36,6 +37,8 @@ class HomeFragment():Fragment(){
 
             mtech.setBackgroundResource(R.drawable.button_unselected_bg)
             mtech.setTextColor(getResources().getColor(R.color.colorPrimary,resources.newTheme()))
+
+            streamcard.visibility = View.VISIBLE
 
         }
         mtech.setOnClickListener {
@@ -56,63 +59,77 @@ class HomeFragment():Fragment(){
         cse.setOnClickListener {
 
             clearAllandHighlightRequiredBranches(cse)
-
+            branch_full = "Computer Science  & Engineering"
             branch = GeneralData.getBranchCode("CSE")
             shared_pref_editor.putString("branch",branch)
+            shared_pref_editor?.putString("branch_full_name",branch_full)
+
             shared_pref_editor.apply()
+
 
         }
         civil.setOnClickListener {
 
             clearAllandHighlightRequiredBranches(civil)
-
+            branch_full = "Civil Engineering"
             branch = GeneralData.getBranchCode("CIVIL")
             shared_pref_editor.putString("branch",branch)
+            shared_pref_editor?.putString("branch_full_name",branch_full)
+
             shared_pref_editor.apply()
 
         }
         mech.setOnClickListener {
 
             clearAllandHighlightRequiredBranches(mech)
-
+            branch_full = "Mechanical Engineering"
             branch = GeneralData.getBranchCode("MECH")
             shared_pref_editor.putString("branch",branch)
+            shared_pref_editor?.putString("branch_full_name",branch_full)
+
             shared_pref_editor.apply()
 
         }
         eee.setOnClickListener {
 
             clearAllandHighlightRequiredBranches(eee)
-
+            branch_full = "Electrical & Electronics Engineering"
             branch = GeneralData.getBranchCode("EEE")
             shared_pref_editor.putString("branch",branch)
+            shared_pref_editor?.putString("branch_full_name",branch_full)
+
             shared_pref_editor.apply()
 
         }
         arch.setOnClickListener {
-
+            branch_full = "Architecture"
             clearAllandHighlightRequiredBranches(arch)
 
             branch = GeneralData.getBranchCode("ARCH")
             shared_pref_editor.putString("branch",branch)
+            shared_pref_editor?.putString("branch_full_name",branch_full)
+
             shared_pref_editor.apply()
 
         }
         ece.setOnClickListener {
-
+            branch_full = "Electronics & Communication"
             clearAllandHighlightRequiredBranches(ece)
 
             branch = GeneralData.getBranchCode("ECE")
             shared_pref_editor.putString("branch",branch)
+            shared_pref_editor?.putString("branch_full_name",branch_full)
+
             shared_pref_editor.apply()
 
         }
         chem.setOnClickListener {
-
+            branch_full = "Chemical Engineering"
             clearAllandHighlightRequiredBranches(chem)
-
             branch = GeneralData.getBranchCode("CHEM")
             shared_pref_editor.putString("branch",branch)
+            shared_pref_editor?.putString("branch_full_name",branch_full)
+
             shared_pref_editor.apply()
 
         }
@@ -121,16 +138,16 @@ class HomeFragment():Fragment(){
 
             shared_pref_editor.putInt("sem",1)
             shared_pref_editor.apply()
-
-            clearAllandHighlightRequiredSemester(sem1)
             sem = 1
+            clearAllandHighlightRequiredSemester(sem1)
 
         }
         sem2.setOnClickListener {
             shared_pref_editor.putInt("sem",2)
             shared_pref_editor.apply()
-            clearAllandHighlightRequiredSemester(sem2)
             sem = 2
+            clearAllandHighlightRequiredSemester(sem2)
+
 
 
 
@@ -139,8 +156,9 @@ class HomeFragment():Fragment(){
         sem3.setOnClickListener {
             shared_pref_editor.putInt("sem",3)
             shared_pref_editor.apply()
-            clearAllandHighlightRequiredSemester(sem3)
             sem = 3
+            clearAllandHighlightRequiredSemester(sem3)
+
 
 
 
@@ -148,72 +166,47 @@ class HomeFragment():Fragment(){
         sem4.setOnClickListener {
             shared_pref_editor.putInt("sem",4)
             shared_pref_editor.apply()
-            clearAllandHighlightRequiredSemester(sem4)
             sem = 4
+            clearAllandHighlightRequiredSemester(sem4)
+
 
 
         }
         sem5.setOnClickListener {
             shared_pref_editor.putInt("sem",5)
             shared_pref_editor.apply()
-            clearAllandHighlightRequiredSemester(sem5)
             sem = 5
+            clearAllandHighlightRequiredSemester(sem5)
+
 
 
         }
         sem6.setOnClickListener {
             shared_pref_editor.putInt("sem",6)
             shared_pref_editor.apply()
-            clearAllandHighlightRequiredSemester(sem6)
             sem = 6
+            clearAllandHighlightRequiredSemester(sem6)
+
 
 
         }
         sem7.setOnClickListener {
             shared_pref_editor.putInt("sem",7)
             shared_pref_editor.apply()
-            clearAllandHighlightRequiredSemester(sem7)
             sem = 7
+            clearAllandHighlightRequiredSemester(sem7)
+
 
 
         }
         sem8.setOnClickListener {
             shared_pref_editor.putInt("sem",8)
             shared_pref_editor.apply()
-            clearAllandHighlightRequiredSemester(sem8)
             sem = 8
-
-
-
+            clearAllandHighlightRequiredSemester(sem8)
         }
 
-        find.setOnClickListener {
 
-            if ((branch!=null) && (sem !=null)){
-
-
-                var ft:FragmentTransaction = fragmentManager.beginTransaction()
-                var nextFrag = SubjectChoosingActivity()
-                 val args = Bundle()
-                args.putString("branch_sem", branch+sem.toString())
-
-                nextFrag.arguments=  args
-                ft.replace(R.id.fragment_location,nextFrag)
-
-
-                ft.commit()
-
-//                var i:Intent  = Intent(context, SubjectChoosingActivity::class.java)
-//                i.putExtra("branch_sem",branch+sem.toString())
-//                startActivity(i)
-
-
-            }
-
-            Toast.makeText(context,branch+sem.toString(),Toast.LENGTH_SHORT).show()
-
-
-        }
 
     }
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -242,6 +235,21 @@ class HomeFragment():Fragment(){
 
 
 
+            var ft:FragmentTransaction = fragmentManager.beginTransaction()
+            var nextFrag = SubjectChoosingFragment()
+            val args = Bundle()
+
+            Toast.makeText(context,branch+sem.toString(),Toast.LENGTH_SHORT).show()
+            args.putString("branch_sem", branch+sem.toString())
+
+            nextFrag.arguments=  args
+            ft.replace(R.id.fragment_location,nextFrag)
+
+
+            ft.commit()
+
+
+
     }
 
     fun clearAllandHighlightRequiredBranches(highlightbranch:TextView){
@@ -264,11 +272,6 @@ class HomeFragment():Fragment(){
         highlightbranch.setBackgroundResource(R.drawable.button_selected_bg)
         highlightbranch.setTextColor(getResources().getColor(R.color.white,resources.newTheme()))
 
-
-
+        semstercard.visibility  = View.VISIBLE
     }
-
-
-
-
 }

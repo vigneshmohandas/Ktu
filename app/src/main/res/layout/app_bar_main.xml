@@ -28,7 +28,7 @@
                     android:scaleType="fitCenter"
                     android:scaleX="5"
                     android:scaleY="1.3"
-                    android:src="@drawable/ic_logov"
+                    app:srcCompat="@drawable/ic_logov"
                     android:layout_height="match_parent" />
             </LinearLayout>
         </android.support.v7.widget.Toolbar>
